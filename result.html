@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>职业人才画像 - 低空经济人才平台</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 画像头部横幅 -->
+  <div class="profile-banner">
+    <div class="banner-left">
+      <div class="avatar-circle">👤</div>
+      <div class="banner-info">
+        <h1 class="banner-name">低空经济从业候选人</h1>
+        <p class="banner-subtitle">职业人才画像报告</p>
+        <div class="banner-meta">
+          <span>测评时间：<strong id="testDate">—</strong></span>
+          <span class="meta-sep">测评总分：<strong id="testScore" class="score-hl">—</strong> / 10</span>
+        </div>
+      </div>
+    </div>
+    <div class="banner-right">
+      <div class="level-badge" id="levelBadge">
+        <span class="level-title" id="levelTitle">—</span>
+        <span class="level-desc" id="levelDesc">—</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主体双栏布局 -->
+  <div class="profile-row">
+
+    <!-- 左栏：雷达图 + 技能标签 -->
+    <div class="profile-col-left">
+
+      <div class="card">
+        <h3 class="section-title">能力雷达图</h3>
+        <div class="radar-wrap">
+          <canvas id="radarChart" width="320" height="300"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="section-title">匹配技能标签</h3>
+        <div id="skillTags" class="tags-wrap"></div>
+      </div>
+
+    </div>
+
+    <!-- 右栏：维度评估 + 职业匹配 -->
+    <div class="profile-col-right">
+
+      <div class="card">
+        <h3 class="section-title">能力维度评估</h3>
+        <div id="dimBars"></div>
+      </div>
+
+      <div class="card">
+        <h3 class="section-title">职业方向匹配度</h3>
+        <div id="careerList"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 发展建议 -->
+  <div class="card" style="margin-top:25px">
+    <h3 class="section-title">个性化发展建议</h3>
+    <div id="suggestions" class="suggest-grid"></div>
+  </div>
+
+  <!-- 操作按钮 -->
+  <div class="action-bar">
+    <button class="btn btn-outline" onclick="location.href='index.html'">回到主页</button>
+    <button class="btn" onclick="location.href='jobs.html'">查看匹配岗位</button>
+    <button class="btn btn-green" onclick="location.href='learning.html'">获取学习推荐</button>
+    <button class="btn btn-outline" onclick="location.href='test.html'">重新测评</button>
+  </div>
+
+</div>
+
+<script src="js/recommend.js"></script>
+</body>
+</html>

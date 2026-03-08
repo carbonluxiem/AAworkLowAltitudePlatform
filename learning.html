@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习推荐 - 低空经济人才平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+    <a href="login.html">登录</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 顶部介绍 -->
+  <div class="card">
+    <h2 class="title" style="font-size:22px;margin-bottom:8px">学习资源推荐</h2>
+    <p class="learning-intro" id="learningIntro">
+      根据你的测评结果，以下资源最适合你现阶段学习，按难度分为三个阶段
+    </p>
+    <div id="learningLevelTag"></div>
+  </div>
+
+  <!-- 入门基础 -->
+  <div class="section-header">
+    <span class="section-badge">入门基础</span>
+  </div>
+  <div class="course-grid" id="sectionBegin"></div>
+
+  <!-- 技能提升 -->
+  <div class="section-header">
+    <span class="section-badge">技能提升</span>
+  </div>
+  <div class="course-grid" id="sectionMid"></div>
+
+  <!-- 进阶认证 -->
+  <div class="section-header">
+    <span class="section-badge">进阶认证</span>
+  </div>
+  <div class="course-grid" id="sectionAdv"></div>
+
+</div>
+
+<script src="js/learning.js"></script>
+</body>
+</html>

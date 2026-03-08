@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册 - 低空经济人才平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+  </div>
+</div>
+
+<div class="auth-wrap">
+  <div class="auth-card card">
+
+    <h2 class="auth-title">创建账号</h2>
+    <p class="auth-sub">加入平台，开启你的低空经济探索之旅 🚁</p>
+
+    <div class="form-group">
+      <label class="form-label">用户名</label>
+      <input class="form-input" type="text" id="username" placeholder="起一个你喜欢的用户名">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">密码</label>
+      <input class="form-input" type="password" id="password" placeholder="设置登录密码">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">确认密码</label>
+      <input class="form-input" type="password" id="password2" placeholder="再输一次密码"
+             onkeydown="if(event.key==='Enter') register()">
+    </div>
+
+    <p id="regTip" class="form-tip"></p>
+
+    <button class="btn auth-btn" onclick="register()">注  册</button>
+
+    <p class="form-switch">已有账号？<a href="login.html">去登录</a></p>
+
+  </div>
+</div>
+
+<script src="js/users.js"></script>
+</body>
+</html>

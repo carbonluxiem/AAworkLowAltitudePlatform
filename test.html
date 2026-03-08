@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>能力测评 - 低空经济人才平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+    <a href="login.html">登录</a>
+  </div>
+</div>
+
+<div class="container" style="max-width:600px">
+
+  <div class="card">
+    <h2 class="title" style="font-size:22px;margin-bottom:6px">低空经济能力自测</h2>
+    <p class="test-intro">共 8 道题，做完后系统将为你生成个人职业画像 ✈</p>
+
+    <!-- 进度条 -->
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span id="progressText">第 1 / 8 题</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- 题目文字 -->
+    <p class="question-text" id="questionText"></p>
+
+    <!-- 选项列表 -->
+    <div id="optionsWrap" class="options-wrap"></div>
+
+    <!-- 提示语 -->
+    <p class="tip-msg" id="tipMsg"></p>
+
+    <!-- 上一题 / 下一题 按钮 -->
+    <div class="test-nav">
+      <button class="btn btn-outline" id="btnPrev" onclick="prevQuestion()" style="visibility:hidden">上一题</button>
+      <button class="btn" id="btnNext">下一题</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/test.js"></script>
+</body>
+</html>

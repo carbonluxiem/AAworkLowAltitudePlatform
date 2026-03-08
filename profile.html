@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页 - 低空经济人才平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+    <a href="profile.html">我的</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 用户横幅 -->
+  <div class="profile-banner">
+    <div class="banner-left">
+      <div class="avatar-circle">👤</div>
+      <div class="banner-info">
+        <h1 class="banner-name" id="profileName">游客</h1>
+        <p class="banner-subtitle">低空经济人才平台用户</p>
+        <div class="banner-meta" id="profileMeta">尚未完成测评</div>
+      </div>
+    </div>
+    <div class="banner-right">
+      <div class="level-badge" id="profileBadge" style="display:none">
+        <span class="level-title" id="profileLevelTitle">—</span>
+        <span class="level-desc" id="profileLevelDesc">—</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 双栏 -->
+  <div class="profile-row">
+
+    <!-- 左栏：账号信息 + 快捷操作 -->
+    <div class="profile-col-left">
+
+      <div class="card">
+        <h3 class="section-title">账号信息</h3>
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-key">用户名</span>
+            <span class="info-val" id="infoUsername">—</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">测评得分</span>
+            <span class="info-val" id="infoScore">尚未测评</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">人才等级</span>
+            <span class="info-val" id="infoLevel">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="section-title">快捷操作</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+          <button class="btn" onclick="location.href='test.html'">去做测评</button>
+          <button class="btn" onclick="location.href='result.html'">查看画像报告</button>
+          <button class="btn" onclick="location.href='learning.html'">我的学习推荐</button>
+          <button class="btn btn-outline" onclick="logout()" style="margin-top:6px">退出登录</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 右栏：修改账号信息 -->
+    <div class="profile-col-right">
+
+      <div class="card">
+        <h3 class="section-title">修改信息</h3>
+        <p style="font-size:13px;color:#aaa;margin-bottom:18px">留空的字段将保持不变</p>
+
+        <div class="form-group">
+          <label class="form-label">新用户名</label>
+          <input class="form-input" type="text" id="newUsername" placeholder="输入新用户名">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">新密码</label>
+          <input class="form-input" type="password" id="newPassword" placeholder="输入新密码">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">确认新密码</label>
+          <input class="form-input" type="password" id="newPassword2" placeholder="再次输入新密码">
+        </div>
+
+        <p id="profileTip" class="form-tip"></p>
+        <button class="btn" onclick="saveProfile()">保存修改</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function getLevel(score) {
+    if (score >= 8) return { title: "高潜力人才", desc: "技术能力突出，具备快速成长潜力", type: "gold" };
+    if (score >= 5) return { title: "发展型人才", desc: "基础较好，持续学习可实现突破", type: "silver" };
+    return { title: "基础型人才", desc: "初入行业，建议系统培养提升", type: "bronze" };
+}
+
+window.onload = function () {
+    var username = localStorage.getItem("username");
+    var score    = localStorage.getItem("score");
+
+    if (!username) {
+        document.getElementById("profileName").textContent = "游客";
+        document.getElementById("infoUsername").textContent = "未登录";
+    } else {
+        document.getElementById("profileName").textContent = username;
+        document.getElementById("infoUsername").textContent = username;
+    }
+
+    if (score) {
+        var lv = getLevel(parseInt(score));
+        document.getElementById("profileMeta").innerHTML =
+            '测评得分：<strong>' + score + '</strong> / 10 &nbsp;·&nbsp; 等级：<strong>' + lv.title + '</strong>';
+        document.getElementById("infoScore").textContent = score + " / 10";
+        document.getElementById("infoLevel").textContent = lv.title;
+
+        var badge = document.getElementById("profileBadge");
+        badge.style.display = "block";
+        badge.className = "level-badge level-" + lv.type;
+        document.getElementById("profileLevelTitle").textContent = lv.title;
+        document.getElementById("profileLevelDesc").textContent  = lv.desc;
+    }
+};
+
+function saveProfile() {
+    var newUser  = document.getElementById("newUsername").value.trim();
+    var newPass  = document.getElementById("newPassword").value;
+    var newPass2 = document.getElementById("newPassword2").value;
+    var tip = document.getElementById("profileTip");
+
+    if (newPass && newPass !== newPass2) {
+        tip.textContent = "两次密码输入不一致";
+        tip.className = "form-tip";
+        return;
+    }
+    if (newUser) { localStorage.setItem("username", newUser); document.getElementById("profileName").textContent = newUser; document.getElementById("infoUsername").textContent = newUser; }
+    if (newPass) { localStorage.setItem("password", newPass); }
+
+    tip.textContent = "修改已保存 ✓";
+    tip.className = "form-tip ok";
+    document.getElementById("newUsername").value  = "";
+    document.getElementById("newPassword").value  = "";
+    document.getElementById("newPassword2").value = "";
+}
+
+function logout() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

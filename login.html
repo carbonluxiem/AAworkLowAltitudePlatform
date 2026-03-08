@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 低空经济人才平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">低空经济人才平台</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="test.html">能力测评</a>
+    <a href="learning.html">学习推荐</a>
+    <a href="jobs.html">岗位信息</a>
+  </div>
+</div>
+
+<div class="auth-wrap">
+  <div class="auth-card card">
+
+    <h2 class="auth-title">欢迎回来</h2>
+    <p class="auth-sub">登录账号，继续探索低空经济职业方向</p>
+
+    <div class="form-group">
+      <label class="form-label">用户名</label>
+      <input class="form-input" type="text" id="username" placeholder="请输入用户名">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">密码</label>
+      <input class="form-input" type="password" id="password" placeholder="请输入密码"
+             onkeydown="if(event.key==='Enter') login()">
+    </div>
+
+    <p id="loginTip" class="form-tip"></p>
+
+    <button class="btn auth-btn" onclick="login()">登  录</button>
+
+    <p class="form-switch">还没有账号？<a href="register.html">去注册</a></p>
+
+  </div>
+</div>
+
+<script src="js/users.js"></script>
+</body>
+</html>
