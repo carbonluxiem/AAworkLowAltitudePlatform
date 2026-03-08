@@ -1,0 +1,957 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+
+    body{
+    font-family: "Segoe UI", Arial;
+    background:#f5f5f5;
+    color:#111;
+    }
+
+    /* 导航栏 */
+
+    .navbar{
+    background:#111;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    }
+
+    .logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+    }
+
+    .nav-links a{
+    color:rgba(255,255,255,0.8);
+    margin-left:20px;
+    text-decoration:none;
+    font-size:15px;
+    }
+
+    .nav-links a:hover{
+    color:white;
+    }
+
+    /* 主体 */
+
+    .container{
+    max-width:1100px;
+    width:100%;
+    margin:40px auto;
+    padding:0 20px;
+    box-sizing:border-box;
+    }
+
+    /* 卡片 */
+
+    .card{
+    background:white;
+    border-radius:6px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border:1px solid #e8e8e8;
+    }
+
+    /* 标题 */
+
+    .title{
+    font-size:28px;
+    margin-bottom:20px;
+    }
+
+    /* 按钮 */
+
+    .btn{
+    background:#111;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:4px;
+    cursor:pointer;
+    margin-top:10px;
+    }
+
+    .btn:hover{
+    background:#333;
+    }
+
+    /* 输入框 */
+
+    input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    }
+
+    /* 测评题 */
+
+    .question{
+    margin-top:20px;
+    }
+
+    /* 岗位网格 */
+
+    .job-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    }
+
+    /* 标签 */
+
+    .tag{
+    display:inline-block;
+    background:#f0f0f0;
+    padding:5px 10px;
+    border-radius:3px;
+    margin-right:5px;
+    margin-top:5px;
+    border:1px solid #e0e0e0;
+    }
+
+    /* 结果框 */
+
+    .result-box{
+    font-size:18px;
+    line-height:1.8;
+    }
+
+/* ================================================
+   职业人才画像页面样式
+   ================================================ */
+
+/* 画像横幅头部 */
+.profile-banner {
+    background: #111;
+    border-radius: 8px;
+    padding: 28px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.banner-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.avatar-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    flex-shrink: 0;
+}
+
+.banner-name {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.banner-subtitle {
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+}
+
+.banner-meta {
+    color: rgba(255,255,255,0.78);
+    font-size: 13px;
+}
+
+.meta-sep {
+    margin-left: 22px;
+}
+
+.score-hl {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* 等级徽章 */
+.level-badge {
+    text-align: center;
+    border-radius: 6px;
+    padding: 18px 30px;
+    min-width: 168px;
+}
+
+.level-gold {
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.level-gold .level-title,
+.level-gold .level-desc {
+    color: #111;
+}
+
+.level-gold .level-desc {
+    color: #444;
+}
+
+.level-silver {
+    background: rgba(255,255,255,0.18);
+    border: 2px solid rgba(255,255,255,0.55);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.level-bronze {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.35);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.level-title {
+    display: block;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.level-desc {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* 双栏布局 */
+.profile-row {
+    display: grid;
+    grid-template-columns: 1fr 1.32fr;
+    gap: 25px;
+}
+
+.profile-col-left,
+.profile-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* 卡片内标题 */
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* 雷达图容器 */
+.radar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 维度条形图 */
+.dim-item {
+    margin-bottom: 14px;
+}
+
+.dim-item:last-child {
+    margin-bottom: 0;
+}
+
+.dim-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+}
+
+.dim-val {
+    font-weight: bold;
+}
+
+.dim-bar-bg {
+    background: #e8e8e8;
+    border-radius: 999px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.dim-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.9s ease;
+}
+
+/* 职业匹配列表 */
+.career-item {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.career-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.career-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.career-icon {
+    font-size: 18px;
+}
+
+.career-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.career-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 11px;
+    border-radius: 3px;
+}
+
+.match-high { background: #111; color: #fff; }
+.match-mid  { background: #555; color: #fff; }
+.match-low  { background: #e8e8e8; color: #333; }
+
+.career-bar-bg {
+    background: #e8e8e8;
+    border-radius: 999px;
+    height: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.career-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.career-bar-fill.match-high { background: #111; }
+.career-bar-fill.match-mid  { background: #555; }
+.career-bar-fill.match-low  { background: #aaa; }
+
+.career-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 技能标签 */
+.tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skill-tag {
+    padding: 6px 15px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tag-blue   { background: #f0f0f0; color: #111; border: 1px solid #d0d0d0; }
+.tag-green  { background: #e8e8e8; color: #111; border: 1px solid #c8c8c8; }
+.tag-purple { background: #f0f0f0; color: #111; border: 1px solid #d0d0d0; }
+.tag-gray   { background: #f5f5f5; color: #555; border: 1px solid #e0e0e0; }
+.tag-orange { background: #e0e0e0; color: #111; border: 1px solid #c0c0c0; }
+
+/* 发展建议网格 */
+.suggest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.suggest-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fafafa;
+    border-radius: 6px;
+    padding: 18px;
+    border: 1px solid #e8e8e8;
+    transition: box-shadow 0.2s;
+}
+
+.suggest-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.suggest-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.suggest-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.suggest-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 操作按钮栏 */
+.action-bar {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 45px;
+}
+
+.btn-green {
+    background: #111;
+}
+
+.btn-green:hover {
+    background: #333;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #111;
+    border: 2px solid #111;
+}
+
+.btn-outline:hover {
+    background: #111;
+    color: white;
+}
+
+/* ================================================
+   测评页
+   ================================================ */
+
+.test-intro {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.progress-wrap {
+    margin-bottom: 28px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    background: #e8e8e8;
+    border-radius: 999px;
+    height: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #111;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.question-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.options-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 24px;
+}
+
+.option-btn {
+    padding: 14px 18px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.18s, background 0.18s;
+    user-select: none;
+    text-align: left;
+}
+
+.option-btn:hover {
+    border-color: #aaa;
+    background: #f5f5f5;
+}
+
+.option-btn.selected {
+    border-color: #111;
+    background: #111;
+    color: white;
+}
+
+.tip-msg {
+    font-size: 13px;
+    color: #888;
+    min-height: 20px;
+    margin-bottom: 6px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.test-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+/* ================================================
+   登录 / 注册页
+   ================================================ */
+
+.auth-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 64px 20px;
+    min-height: calc(100vh - 60px);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.auth-sub {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 28px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 6px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #111;
+    margin-top: 0;
+    transition: border-color 0.2s;
+    background: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #111;
+}
+
+.form-tip {
+    font-size: 13px;
+    color: #c00;
+    min-height: 18px;
+    margin: 2px 0 8px;
+}
+
+.form-tip.ok {
+    color: #333;
+}
+
+.form-switch {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 18px;
+}
+
+.form-switch a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================
+   个人信息页
+   ================================================ */
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-key {
+    color: #999;
+}
+
+.info-val {
+    color: #111;
+    font-weight: 600;
+}
+
+/* ================================================
+   学习推荐页
+   ================================================ */
+
+.learning-intro {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.section-header {
+    margin: 28px 0 14px;
+}
+
+.section-badge {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    border-left: 3px solid #111;
+    padding-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 6px;
+}
+
+.course-card {
+    background: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 18px;
+    transition: box-shadow 0.2s;
+}
+
+.course-card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.course-card-rec {
+    border-color: #111;
+    border-width: 1.5px;
+}
+
+.course-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+.course-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    flex: 1;
+    line-height: 1.5;
+}
+
+.course-rec-badge {
+    background: #111;
+    color: white;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.course-time {
+    font-size: 12px;
+    color: #bbb;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.course-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.course-tag {
+    font-size: 12px;
+    padding: 3px 9px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    color: #666;
+}
+
+.course-rec-tag {
+    display: inline-block;
+    font-size: 13px;
+    background: #f0f0f0;
+    padding: 5px 14px;
+    border-radius: 4px;
+    color: #111;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* ================================================
+   响应式 — 平板 / 小屏  (≤ 860px)
+   ================================================ */
+
+@media (max-width: 860px) {
+    .profile-row {
+        grid-template-columns: 1fr;
+    }
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    .suggest-grid {
+        grid-template-columns: 1fr;
+    }
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================================
+   响应式 — 手机  (≤ 600px)
+   ================================================ */
+
+@media (max-width: 600px) {
+
+    /* 导航栏 */
+    .navbar {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px 0;
+    }
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+        font-size: 13px;
+    }
+
+    /* 主体容器 */
+    .container {
+        margin: 14px auto;
+        padding: 0 12px;
+    }
+
+    /* 卡片 */
+    .card {
+        padding: 16px;
+        border-radius: 6px;
+    }
+
+    /* 标题 */
+    .title {
+        font-size: 20px;
+    }
+
+    /* 按钮 */
+    .btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    /* profile 横幅：纵向堆叠 */
+    .profile-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 18px 16px;
+    }
+    .banner-left {
+        gap: 14px;
+    }
+    .avatar-circle {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+    .banner-name {
+        font-size: 18px;
+    }
+    .banner-subtitle {
+        font-size: 12px;
+    }
+    .banner-meta {
+        font-size: 12px;
+    }
+    .meta-sep {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+    .level-badge {
+        min-width: unset;
+        width: 100%;
+        padding: 12px 16px;
+        text-align: left;
+        border-radius: 6px;
+    }
+    .level-title {
+        font-size: 16px;
+    }
+
+    /* 操作按钮栏：纵向排列 */
+    .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 28px;
+        padding: 0 4px;
+    }
+    .action-bar .btn {
+        text-align: center;
+        padding: 12px;
+        margin-top: 0;
+    }
+
+    /* 雷达图：允许横向滚动 */
+    .radar-wrap {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    /* 测评页 */
+    .question-text {
+        font-size: 15px;
+    }
+    .option-btn {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+    .test-nav {
+        gap: 10px;
+    }
+    .test-nav .btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    /* 登录 / 注册 */
+    .auth-wrap {
+        padding: 28px 12px;
+    }
+    .auth-title {
+        font-size: 20px;
+    }
+    .auth-btn {
+        padding: 11px;
+    }
+
+    /* 学习推荐 */
+    .section-header {
+        margin: 20px 0 12px;
+    }
+
+    /* 卡片内标题 */
+    .section-title {
+        font-size: 15px;
+    }
+}
