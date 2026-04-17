@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>低空经济人才平台</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="主导航">
+
+<div class="logo" onclick="location.href='index.html'">低空经济人才平台</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="index.html" class="active">首页</a>
+<a href="test.html">能力测评</a>
+<a href="learning.html">学习推荐</a>
+<a href="jobs.html">岗位信息</a>
+
+<!-- 登录按钮交给JS控制 -->
+<span id="authArea"></span>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+  <section class="hero" aria-labelledby="heroTitle">
+    <p class="hero-eyebrow">低空经济人才平台</p>
+    <h1 class="hero-title" id="heroTitle">发现你的职业方向</h1>
+    <p class="hero-title-sub">用测评生成你的专属画像</p>
+    <p class="hero-desc">完成能力测评，获得个性化的职业画像与学习建议，找到你在低空经济中的最佳位置。</p>
+    <div class="hero-actions">
+      <a class="btn btn-green" href="test.html">开始测评</a>
+      <a class="btn" href="jobs.html">岗位信息</a>
+      <a class="btn btn-outline" href="learning.html">学习推荐</a>
+    </div>
+  </section>
+
+  <div class="card">
+
+    <h2 class="title">低空经济应用场景</h2>
+
+    <div>
+      <span class="tag">无人机物流</span>
+      <span class="tag">电力巡检</span>
+      <span class="tag">应急救援</span>
+      <span class="tag">农业植保</span>
+      <span class="tag">智慧城市</span>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- 新增：登录状态控制 -->
+<script>
+window.onload = function () {
+    var isLogin = localStorage.getItem("isLogin");
+    var username = localStorage.getItem("username");
+    var authArea = document.getElementById("authArea");
+
+    if (isLogin === "true") {
+        authArea.innerHTML = `
+            <a href="profile.html">你好，${username || "用户"}</a>
+            <a href="#" onclick="logout()">退出</a>
+        `;
+    } else {
+        //  未登录
+        authArea.innerHTML = `<a href="login.html">登录</a>`;
+    }
+};
+
+//  退出登录
+function logout() {
+    localStorage.clear();
+    alert("已退出登录");
+    location.reload();
+}
+</script>
+
+</body>
+
+</html>
